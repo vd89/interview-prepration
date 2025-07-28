@@ -1,0 +1,14 @@
+{
+  "name": "simple-slot-machine",
+  "version": "1.0.0",
+  "description": "Simple Slot Machine Game",
+  "main": "index.js",
+  "repository": "git@github.com:vd89/interview-prepration.git/simple-slot-machine",
+  "author": "vd98",
+  "license": "yes",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "test": "node --test"
+  }
+}
