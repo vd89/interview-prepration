@@ -1,0 +1,14 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic-tac-toe Game ",
+  "main": "index.js",
+  "repository": "git@github.com:vd89/interview-prepration.git/tic-tac-toe",
+  "author": "vd98",
+  "license": "yes",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "test": "node --test"
+  }
+}
