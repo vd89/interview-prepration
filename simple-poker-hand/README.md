@@ -1,48 +1,60 @@
-## 🎯 Problem Statement
+# Question 1: Simple Poker Hand Evaluator
 
+## 🎯 Problem Statement
 Build a poker hand evaluator that can determine the rank of a 5-card poker hand and compare hands to determine winners.
 
-## 📋 Requirements
+## 📋 Core Requirements
 
-### Core Functions to Implement:
-1. **Create Deck** - Generate a standard 52-card deck
-2. **Deal Cards** - Deal 5 cards from the deck
-3. **Evaluate Hand** - Determine the poker hand rank
-4. **Compare Hands** - Determine winner between two hands
+### Step 1: Create the Deck
+- Write a function to generate a standard 52-card deck
+- Use string encoding: "AS" = Ace of Spades, "KH" = King of Hearts, etc.
+- Suits: S, H, D, C | Values: A, 2-9, T(10), J, Q, K
 
-### Hand Rankings (Highest to Lowest):
+### Step 2: Deal Cards
+- Write a function to deal 5 cards from the deck
+- Should remove dealt cards from the deck
+- Handle edge cases (not enough cards)
+
+### Step 3: Evaluate Hand Rank
+Write a function that identifies these poker hands (highest to lowest):
 1. **Straight Flush** - 5 consecutive cards of same suit
 2. **Four of a Kind** - 4 cards of same rank
 3. **Full House** - 3 of a kind + pair
 4. **Flush** - 5 cards of same suit
-5. **Straight** - 5 consecutive cards
+5. **Straight** - 5 consecutive cards (A-2-3-4-5 is valid)
 6. **Three of a Kind** - 3 cards of same rank
 7. **Two Pair** - 2 pairs of different ranks
 8. **Pair** - 2 cards of same rank
 9. **High Card** - No other combination
 
+### Step 4: Compare Hands
+- Write a function to compare two 5-card hands
+- Return winner ("hand1", "hand2", or "tie")
+- Handle tie-breaking within same hand ranks
 
-## 🎯 Follow-up Questions & Extensions
+## 🏆 Bonus Challenges
 
-### Tie Breaking:
-- How do you handle ties when comparing hands of the same rank?
-- What about community cards (Texas Hold'em style)?
+### Challenge 1: Advanced Tie Breaking
+- Implement detailed tie-breaking rules for each hand type
+- Handle kickers (remaining cards) properly
+- Support comparing multiple hands simultaneously
 
-### Advanced Features:
-- Support for wild cards (jokers)
-- Different poker variants (Omaha, Seven-card stud)
-- Tournament scoring systems
-- Probability calculations for drawing certain hands
+### Challenge 2: Wild Cards
+- Add support for jokers as wild cards
+- Modify hand evaluation to find best possible hand with wilds
 
-### Performance Optimizations:
-- Memoization for hand evaluations
-- Optimized comparison algorithms
-- Batch processing multiple hands
+### Challenge 3: Different Poker Variants
+- Texas Hold'em (7 cards, pick best 5)
+- Omaha (4 hole cards + 5 community cards)
+- Seven-card stud evaluation
 
-## 🔍 Key Concepts Tested
+### Challenge 4: Statistics & Probability
+- Calculate probability of getting each hand type
+- Generate hand strength percentages
+- Implement "outs" calculation (cards that improve hand)
 
-- **Data Structures**: Arrays, objects, sets for card representation
-- **Algorithms**: Sorting, counting, pattern matching
-- **Logic**: Complex conditional statements and comparisons
-- **Error Handling**: Input validation and edge cases
-- **Object-Oriented Design**: Class structure and method organization
+## 🤔 Interview Discussion Points
+- How would you optimize for speed vs memory?
+- How to handle different deck sizes or card values?
+- What data structures work best for card representation?
+- How would you extend this for tournament play?
