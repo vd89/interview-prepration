@@ -2,8 +2,6 @@ export function sum(params) {
   return params.reduce((acc, curr) => acc + curr, 0);
 }
 
-
-
 // Generate the deck of 52 cards
 
 export function generateDeck() {
@@ -16,7 +14,7 @@ export function generateDeck() {
   ];
   for (const suit of suits) {
     for (const rank of ranks) {
-      desk.push( suit + rank );
+      desk.push(suit + rank);
     }
   }
   return desk;
@@ -36,7 +34,7 @@ export function dealCards(deck) {
   if (deck.length < 5) {
     throw new Error('Not enough cards in the deck to deal 5 cards');
   }
-   const randomIndices = new Set();
+  const randomIndices = new Set();
 
   // Generate 5 unique random indices
   while (randomIndices.size < 5) {
@@ -130,11 +128,6 @@ export function evaluateHandRank(hand) {
   }
 }
 
-
-const deck = generateDeck();
-// console.log('Generated Deck:', deck);
-
-
 /*
 ### Step 4: Compare Hands
 - Write a function to compare two 5-card hands
@@ -158,17 +151,6 @@ export function compareHands(hand1, hand2) {
 
   return handRanks.indexOf(rank1) >
     handRanks.indexOf(rank2)
-      ? `Player 1 wines with ${rank1}`
-      : `Player 2 wines with ${rank2}`;
+    ? `Player 1 wines with ${rank1}`
+    : `Player 2 wines with ${rank2}`;
 }
-
-
-
-
-const hand1 = dealCards(deck);
-
-const hand2 = dealCards(deck);
-
-const compare = compareHands(hand1, hand2);
-console.log('Compare Hands:', compare);
-// console.log('Compare Hands:', compareHands(hand1, hand2));
